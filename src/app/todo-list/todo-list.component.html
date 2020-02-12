@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Item name</span>
+        <input type="text" class="form-control" aria-label="Username" [(ngModel)]="nameToAdd">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-primary btn-block" (click)="addItem()">Add</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <input type="text" class="form-control" placeholder="Enter item name to search..." aria-label="Username" [(ngModel)]="nameToSearch">
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-dark btn-block" (click)="clearItem()">Remove all</button>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-7">
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let name of getItemList(), let i = index" (click)="removeItem(i)">{{i + 1}}.&nbsp;{{name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
